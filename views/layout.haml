@@ -3,13 +3,16 @@
   %head
     %meta(charset="utf-8")
     %title Castlegrey Lanscapes
+    %link{rel: 'stylesheet', href: '/stylesheets/bootstrap/css/bootstrap.css'}
+    %link{rel: 'stylesheet', href: '/stylesheets/bootstrap/css/bootstrap-responsive.css'}
     %link{rel: 'stylesheet', href: '/stylesheets/layout.css'}
   %body
     %div.header
       %div.logo
-        %img(src='/images/logo.jpg')
+        %h1 Castlegrey Landscapes
       %div.contact-details
         %p Ph: 086 8274372
         %p Ph: 087 7545965
         %p Email: conor@castlegreylandscapes.com
     =yield
+    %script{ src: "/stylesheets/bootstrap/js/bootstrap.min.js"}
