@@ -1,16 +1,19 @@
 body
   margin-top: 0
   background-image: url('/images/grass-background.jpg')
+  background-repeat: no-repeat
   margin-left: auto
   margin-right: auto
   width: 65%
 
 .header
   margin-top: 2em
-  display: inline-block
-  width: 781px
+  display: block
+  padding-right: 32px
+  margin-right: auto
+  margin-left: auto
   background: white
-  padding-left: 51px
+  padding-left: 25px
 
 .leaf-image
   display: inline-block
@@ -19,38 +22,34 @@ body
     width: 175px
 
 .logo
+  border-top: 1px solid #ddd
+  border-bottom: 1px solid #ddd
   h1
     font-size: 31.5px
-    border-top: 1px solid #ddd
-    border-bottom: 1px solid #ddd
   display: inline-block
-  margin-left: 5px
-  padding-top: 1.5em
-  padding-left: 10px
+  padding-left: 55px
+  padding-right: 55px
+  margin-top: 1.5em
+  vertical-align: bottom
 
-.contact-details
-  display: inline-block
-  vertical-align: top
-  margin-top: 14px
-  margin-left: 80px
-  p
-    margin: 0
-    color: black
-
-.navbar
-  .nav
-    border-top: 1px solid #DDD
-    width: 88%
-    margin-top: 25px
-  ul
-    .nav-tabs
+.nav
+  border-top: 1px solid #DDD
+  width: 88%
+  margin-top: 25px
+  padding-right: 10%
+ul
+  .nav-tabs
   padding-left: 1em
+  li
+    &:first-child
+      padding-left: 29%
   li
     a
       color: black
 
 .content
   padding-top: 1em
-  background: #F5F5F5
+  background: white
+  padding: 25px 25px 10px 30px
 
 @import homepage
