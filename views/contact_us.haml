@@ -1,0 +1,22 @@
+.contact-us
+  %h2 Contact Us
+  .contact-details
+    %p Ph: 086 8274372
+    %p Ph: 087 7545965
+    %p Email: conor@castlegreylandscapes.com
+
+  %h4 Or, fill in an enquiry form and we'll get back to you...
+  %form{ action: "/send_enquiry", method: "POST"}
+    .form_group
+      %input{type: "text", placeholder: "Full Name", name: "name"}
+    .form_group
+      %input{type: "text", placeholder: "Email", name: "email"}
+    .form_group
+      %input{type: "text", placeholder: "Mobile", name: "mobile"}
+    %select{name: "contact_method", "class" => "form-control"}
+      %option{value: "phone"} Contact me by phone
+      %option{valud: "email"} Contact me by email
+    .form_group
+      %textarea{cols: "5", rows: "10", placeholder: "Enter enquiry here", name: "enquiry", required: "true" }
+    .form_group
+      %button{type: "submit", "class" => "btn btn-default"}Send Equiry
