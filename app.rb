@@ -15,6 +15,8 @@ class App < Sinatra::Base
   set :haml, { :format => :html5 }
 
   get '/', :provides => :html do
+    @images = Dir.new('public/images/homepage_carousel').select { |f| f.downcase.include? ".jpg" }
+    @images.map! { |image| image.gsub(" ", "\ ") }
     haml :homepage
   end
 

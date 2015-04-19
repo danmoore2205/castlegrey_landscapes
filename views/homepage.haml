@@ -21,25 +21,18 @@
         %td Patios
     %div.carousel.slide(id="carousel-example-generic" data-ride='carousel')
       %ol.carousel-indicators
-        %li.active(data-target='#carousel-example-generic' data-slide-to='0')
-        %li(data-target='#carousel-example-generic' data-slide-to='1')
-        %li(data-target='#carousel-example-generic' data-slide-to='2')
-      %div.carousel-inner
-        %div.item.active
-          %img(src="images/homepage_carousel/garden_area.jpeg" alt="Garden Area")
-          %div.carousel-caption
-            %h3 Garden Area
-        %div.item
-          %img(src="images/homepage_carousel/patio.jpeg" alt="Patio")
-          %div.carousel-caption
-            %h3 Patio
-        %div.item
-          %img(src="images/homepage_carousel/paving.jpeg" alt="Paving")
-          %div.carousel-caption
-            %h3 Paving
+        - @images.each_with_index do |image_filename, index|
+          %li{ :class => (index == 0) && "active", "data-target" => '#carousel-example-generic', "data-slide-to" => '0' }
+      %div.carousel-inner{ role: "listbox"}
+        - @images.each_with_index do |image_filename, index|
+          %div{:class => (index == 0) ? "item active" : 'item' }
+            %img{:src => "images/homepage_carousel/#{image_filename}"}
+            %div.carousel-caption
+              %h5 Optional caption can go here
       %a.left.carousel-control(href="#carousel-example-generic" role="button" data-slide="prev")
         %span.glyphicon.glyphicon-chevron-left
       %a.right.carousel-control(href="#carousel-example-generic" role="button" data-slide="next")
-        %span.glyphicon.glyphicon-chevron-right
-    %p
-      %a.btn.btn-primary.btn-lg{ role: "button" }View Portfolio
+        %span.glyphicon.glyphicon-chevron-right{ "aria-hidden" => "true"}
+        %span.sr-only Next
+    / %p
+    /   %a.btn.btn-success.btn-lg{ type: "button" }View Portfolio
