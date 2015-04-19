@@ -6,6 +6,7 @@ gem 'sinatra'
 gem 'haml'
 gem 'sass'
 gem 'pony'
+gem 'rack-flash3'
 
 group :development do
   gem 'sinatra-contrib'

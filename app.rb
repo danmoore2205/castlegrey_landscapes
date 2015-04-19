@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'pony'
+require 'rack-flash'
 if ENV['RACK_ENV'] == "development"
   require 'pry'
   require 'pry-remote'
@@ -7,6 +8,8 @@ if ENV['RACK_ENV'] == "development"
 end
 
 class App < Sinatra::Base
+  enable :sessions
+  use Rack::Flash
 
   configure :development do
     register Sinatra::Reloader
@@ -40,6 +43,7 @@ class App < Sinatra::Base
         :authentication       => :plain # :plain, :login, :cram_md5, no auth by default
       }
     )
+    flash[:notice] = "Thanks for your enquiry, we'll be in touch soon."
     redirect '/contact'
   end
 
