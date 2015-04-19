@@ -1,8 +1,10 @@
 require 'sinatra'
 require 'pony'
-require 'pry'
-require 'pry-remote'
-require 'sinatra/reloader'
+if ENV['RACK_ENV'] == "development"
+  require 'pry'
+  require 'pry-remote'
+  require 'sinatra/reloader'
+end
 
 class App < Sinatra::Base
 
