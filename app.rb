@@ -26,8 +26,8 @@ class App < Sinatra::Base
 
   post '/send_enquiry' do
     Pony.mail(
-      :to => ENV['FROM_EMAIL'],
-      :from => ENV['TO_EMAIL'],
+      :to => ENV['TO_EMAIL'],
+      :from => ENV['FROM_EMAIL'],
       :subject => "#{params[:name]} has made an enqury.",
       :body => haml(:enquiry_email, layout: false),
       :via => :smtp,
