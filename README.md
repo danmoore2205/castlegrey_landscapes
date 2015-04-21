@@ -21,3 +21,7 @@ As it's deployed to heruko, environment variables are used for config data. Ensu
 
 ###Adding a new sass file
 Create .sass file in public/images/sass and import it at the end of layout.sass.
+
+###Heroku Commands
+Deploy a branch
+    git push local_branch_name:master
