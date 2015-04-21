@@ -27,9 +27,9 @@ class App < Sinatra::Base
     haml :about
   end
 
-  get '/contact', :provides => :html do
-    haml :contact_us
-  end
+  # get '/contact', :provides => :html do
+  #   haml :contact_us
+  # end
 
   get '/portfolio', :provides => :html do
     haml :portfolio
