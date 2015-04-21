@@ -3,29 +3,31 @@
   .job
     %h4 Sorted someones garden
     .row
-      .col-xs-12.col-sm-6.col-lg-8
+      .col-md-4
         .image
-          %img(src='/images/jobs/grass_before.jpg')
+          %img{:src => '/images/jobs/grass_before.jpg', :class => 'img-responsive'}
           %p This was before
-      .col-xs-6.col-sm-6.col-lg-4
+      .col-md-4
         .image
-          %img(src='/images/jobs/ul_after.jpg')
+          %img{:src => '/images/jobs/ul_after.jpg', :class => 'img-responsive'}
           %p And this was after
+      .col-md-4
         .image
-          %img(src='/images/jobs/grass_laying_after.jpg')
+          %img{:src =>'/images/jobs/grass_laying_after.jpg', :class => 'img-responsive'}
           %p And this was after also
   .job
     %h4 Sorted someone elses garden
     .row
-      .col-xs-12.col-sm-6.col-lg-8
+      .col-md-4
         .image
-          %img(src='/images/water_drop_on_leaf.jpg')
+          %img{:src => '/images/water_drop_on_leaf.jpg', :class => 'img-responsive'}
           %p This was before
-          .image
-            %img(src='/images/water_drop_on_leaf.jpg')
-            %p This was also before
-      .col-xs-6.col-sm-6.col-lg-4
+      .col-md-4
         .image
-          %img(src='/images/leaves.jpg')
+          %img{:src => '/images/water_drop_on_leaf.jpg', :class => 'img-responsive'}
+          %p This was also before
+      .col-md-4
+        .image
+          %img{:src => '/images/leaves.jpg', :class => 'img-responsive'}
           %p And this was after
 
