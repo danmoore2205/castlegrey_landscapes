@@ -8,11 +8,12 @@
     %link{rel: 'stylesheet', href: '/stylesheets/layout.css'}
   %body
     %div.header
-      %div.leaf-image
-        %img(src='/images/leaf-logo.jpg')
-      %div.logo
-        %h1 CASTLEGREY
-        %h1 LANDSCAPES
+      %ul.logos
+        %li.leaf-image
+          %img(src='/images/leaf-logo.jpg')
+        %li.logo
+          %h1 CASTLEGREY LANDSCAPES
+    .menu
       %ul.nav.nav-tabs{ role: "tablist" }
         %li
           %a{ href: "/" } Home
@@ -25,6 +26,6 @@
     %div.content
       - if flash[:notice]
         .alert.alert-success{:role => "alert"}= "#{flash[:notice]}"
-      =yield
+    =yield
   %script{ src: "https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"}
   %script{ src: "/stylesheets/bootstrap/js/bootstrap.min.js"}

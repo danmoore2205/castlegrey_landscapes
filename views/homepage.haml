@@ -1,38 +1,54 @@
 %div.homepage
-  %div.jumbotrons
-    %h3 Welcome!
-    %p Castlegrey Landscapes is a Limerick based company that can offer you a full landscaping and grounds maintenance service for your home or business.
-    %h4.offer We offer:
-    %table.services
-      %tr
-        %th.tblleft Maintenance Services
-        %th Landscaping Services
-      %tr
-        %td.tblleft Grass Cutting
-        %td Garden renovations
-      %tr
-        %td.tblleft Shrub Pruning &amp; Hedge Cutting
-        %td Tree and Shrub Planting
-      %tr
-        %td.tblleft Weed control
-        %td Water Features
-      %tr
-        %td.tblleft Annual Maintenance Schedule
-        %td Patios
-    %div.carousel.slide(id="carousel-example-generic" data-ride='carousel')
-      %ol.carousel-indicators
-        - @images.each_with_index do |image_filename, index|
-          %li{ :class => (index == 0) && "active", "data-target" => '#carousel-example-generic', "data-slide-to" => '0' }
-      %div.carousel-inner{ role: "listbox"}
-        - @images.each_with_index do |image_filename, index|
-          %div{:class => (index == 0) ? "item active" : 'item' }
-            %img{:src => "images/homepage_carousel/#{image_filename}"}
-            %div.carousel-caption
-              %h5 Optional caption can go here
-      %a.left.carousel-control(href="#carousel-example-generic" role="button" data-slide="prev")
-        %span.glyphicon.glyphicon-chevron-left
-      %a.right.carousel-control(href="#carousel-example-generic" role="button" data-slide="next")
-        %span.glyphicon.glyphicon-chevron-right{ "aria-hidden" => "true"}
-        %span.sr-only Next
-    / %p
-    /   %a.btn.btn-success.btn-lg{ type: "button" }View Portfolio
+  .row
+    .col-xs-12.col-sm-6.col-lg-8
+      %h3 Welcome to Castlegrey Landscapes...
+      %p We are a Limerick based company that can offer you a full landscaping and grounds maintenance service for your home or business.
+      .maintenance
+        %h4.offer Maintenance Services
+        %ul
+          %li Grass Cutting
+          %li Shrub Pruning &amp; Hedge Cutting
+          %li Weed control
+          %li Annual Maintenance Schedule
+      .landscaping
+        %h4.offer Landscaping Services
+        %ul
+          %li Grass Cutting
+          %li Shrub Pruning &amp; Hedge Cutting
+          %li Weed control
+          %li Annual Maintenance Schedule
+      .images
+        %div.carousel.slide(id="carousel-example-generic" data-ride='carousel')
+          %ol.carousel-indicators
+            - @images.each_with_index do |image_filename, index|
+              %li{ :class => (index == 0) && "active", "data-target" => '#carousel-example-generic', "data-slide-to" => '0' }
+          %div.carousel-inner{ role: "listbox"}
+            - @images.each_with_index do |image_filename, index|
+              %div{:class => (index == 0) ? "item active" : 'item' }
+                %img{:src => "images/homepage_carousel/#{image_filename}"}
+                %div.carousel-caption
+                  %h5 Optional caption can go here
+          %a.left.carousel-control(href="#carousel-example-generic" role="button" data-slide="prev")
+            %span.glyphicon.glyphicon-chevron-left
+          %a.right.carousel-control(href="#carousel-example-generic" role="button" data-slide="next")
+            %span.glyphicon.glyphicon-chevron-right{ "aria-hidden" => "true"}
+            %span.sr-only Next
+          / %p
+          /   %a.btn.btn-success.btn-lg{ type: "button" }View Portfolio
+    .col-xs-6.col-sm-6.col-lg-4
+      %h4 Get a free quotation
+      %form{ action: "/send_enquiry", method: "POST"}
+        .form-group
+          %input.form-control{type: "text", placeholder: "Full Name", name: "name"}
+        .form-group
+          %input.form-control{type: "text", placeholder: "Email", name: "email"}
+        .form-group
+          %input.form-control{type: "text", placeholder: "Mobile", name: "mobile"}
+        .form-group
+          %select{name: "contact_method", "class" => "form-control"}
+            %option{value: "phone"} Contact me by phone
+            %option{valud: "email"} Contact me by email
+        .form-group
+          %textarea.form-control{cols: "5", rows: "10", placeholder: "Enter enquiry here", name: "enquiry", required: "true" }
+        .form-group
+          %button{type: "submit", "class" => "btn btn-default"}Send Equiry
