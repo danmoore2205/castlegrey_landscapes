@@ -31,6 +31,10 @@ class App < Sinatra::Base
     haml :contact_us
   end
 
+  get '/portfolio', :provides => :html do
+    haml :portfolio
+  end
+
   post '/send_enquiry' do
     Pony.mail(
       :to => ENV['TO_EMAIL'],

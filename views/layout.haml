@@ -21,8 +21,8 @@
           %a{ href: "/about" } About
         %li
           %a{ href: "/contact" } Contact
-        / %li
-        /   %a{ href: "/portfolio" } Portfolio
+        %li
+          %a{ href: "/portfolio" } Portfolio
     %div.content
       - if flash[:notice]
         .alert.alert-success{:role => "alert"}= "#{flash[:notice]}"
