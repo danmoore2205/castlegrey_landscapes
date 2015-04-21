@@ -8,18 +8,4 @@
         %p Email: conor@castlegreylandscapes.com
     .col-xs-6.col-sm-6.col-lg-4
       %h4 Or, fill in an enquiry form and we'll get back to you...
-      %form{ action: "/send_enquiry", method: "POST"}
-        .form-group
-          %input.form-control{type: "text", placeholder: "Full Name", name: "name"}
-        .form-group
-          %input.form-control{type: "text", placeholder: "Email", name: "email"}
-        .form-group
-          %input.form-control{type: "text", placeholder: "Mobile", name: "mobile"}
-        .form-group
-          %select{name: "contact_method", "class" => "form-control"}
-            %option{value: "phone"} Contact me by phone
-            %option{valud: "email"} Contact me by email
-        .form-group
-          %textarea.form-control{cols: "5", rows: "10", placeholder: "Enter enquiry here", name: "enquiry", required: "true" }
-        .form-group
-          %button{type: "submit", "class" => "btn btn-default"}Send Equiry
+      = haml :enquiry_form
