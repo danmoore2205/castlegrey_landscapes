@@ -2,7 +2,7 @@
   .row
     .col-xs-12.col-sm-6.col-lg-8
       %h3 Welcome to Castlegrey Landscapes...
-      %p We are a Limerick based company that can offer you a full landscaping and grounds maintenance service for your home or business.
+      %p Castlegrey Landscapes can offer you a full landscaping and grounds maintenance service for your home or business.
       .contact-details
         %p Ph: 086 8274372
         %p Ph: 087 7545965
@@ -17,26 +17,30 @@
               %div{:class => (index == 0) ? "item active" : 'item' }
                 %img{:src => "images/homepage_carousel/#{image_filename}"}
                 %div.carousel-caption
-                  %h5 Optional caption can go here
+                  /%h5 Optional caption can go here
           %a.left.carousel-control(href="#carousel-example-generic" role="button" data-slide="prev")
             %span.glyphicon.glyphicon-chevron-left
           %a.right.carousel-control(href="#carousel-example-generic" role="button" data-slide="next")
             %span.glyphicon.glyphicon-chevron-right{ "aria-hidden" => "true"}
             %span.sr-only Next
-      .maintenance
-        %h4.offer Maintenance Services
-        %ul
-          %li Grass Cutting
-          %li Shrub Pruning &amp; Hedge Cutting
-          %li Weed control
-          %li Annual Maintenance Schedule
       .landscaping
         %h4.offer Landscaping Services
         %ul
-          %li Grass Cutting
-          %li Shrub Pruning &amp; Hedge Cutting
+          %li Commercial lanscaping
+          %li Garden makeovers
+          %li Tree and shrub planting
+          %li Synthetic grass
+          %li Patios & paving
+          %li New lawns
+          %li Turf lawns supplied and laid
+      .maintenance
+        %h4.offer Maintenance Services
+        %ul
+          %li Domestic garden maintenance
+          %li Commercial grounds maintenance
+          %li Lawn care
           %li Weed control
-          %li Annual Maintenance Schedule
+          %li Annual maintenance contracts
           / %p
           /   %a.btn.btn-success.btn-lg{ type: "button" }View Portfolio
     .col-xs-12.col-sm-6.col-lg-4
