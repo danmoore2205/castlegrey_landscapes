@@ -23,8 +23,8 @@ class App < Sinatra::Base
     haml :homepage
   end
 
-  get '/about', :provides => :html do
-    haml :about
+  get '/services', :provides => :html do
+    haml :services
   end
 
   # get '/contact', :provides => :html do
