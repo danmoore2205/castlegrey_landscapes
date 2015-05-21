@@ -52,7 +52,7 @@ class App < Sinatra::Base
       }
     )
     flash[:notice] = "Thanks for your enquiry, we'll be in touch soon."
-    redirect '/contact'
+    redirect '/'
   end
 
 end
