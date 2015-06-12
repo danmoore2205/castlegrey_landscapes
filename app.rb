@@ -36,23 +36,28 @@ class App < Sinatra::Base
   end
 
   post '/send_enquiry' do
-    Pony.mail(
-      :to => ENV['TO_EMAIL'],
-      :from => ENV['FROM_EMAIL'],
-      :subject => "#{params[:name]} has made an enqury.",
-      :body => haml(:enquiry_email, layout: false),
-      :via => :smtp,
-      :via_options => {
-        :address              => 'smtp.gmail.com',
-        :port                 => '587',
-        :enable_starttls_auto => true,
-        :user_name            => ENV['EMAIL_USERNAME'],
-        :password             => ENV['EMAIL_PASSWORD'],
-        :authentication       => :plain # :plain, :login, :cram_md5, no auth by default
-      }
-    )
-    flash[:notice] = "Thanks for your enquiry, we'll be in touch soon."
-    redirect '/'
+    if params[:bot_buster] == 6
+      Pony.mail(
+        :to => ENV['TO_EMAIL'],
+        :from => ENV['FROM_EMAIL'],
+        :subject => "#{params[:name]} has made an enqury.",
+        :body => haml(:enquiry_email, layout: false),
+        :via => :smtp,
+        :via_options => {
+          :address              => 'smtp.gmail.com',
+          :port                 => '587',
+          :enable_starttls_auto => true,
+          :user_name            => ENV['EMAIL_USERNAME'],
+          :password             => ENV['EMAIL_PASSWORD'],
+          :authentication       => :plain # :plain, :login, :cram_md5, no auth by default
+        }
+      )
+      flash[:notice] = "Thanks for your enquiry, we'll be in touch soon."
+      redirect '/'
+    else
+      flash[:notice] = "Please enter the correct answer to 4 + 2 in the box provided."
+      redirect '/'
+    end
   end
 
 end

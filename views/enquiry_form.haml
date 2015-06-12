@@ -11,5 +11,8 @@
       %option{valud: "email"} Contact me by email
   .form-group
     %textarea.form-control{cols: "5", rows: "10", placeholder: "Enter enquiry here", name: "enquiry", required: "true" }
+  .form-group.captcha
+    %label Are you human? 4 + 2 = ?
+    %input.form-control{type: "text", name: "bot_buster"}
   .form-group
     %button{type: "submit", "class" => "btn btn-default"}Send Enquiry
