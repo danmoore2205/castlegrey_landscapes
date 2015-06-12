@@ -7,6 +7,8 @@
     %link{rel: 'stylesheet', href: '/stylesheets/bootstrap/css/bootstrap.css'}
     %link{rel: 'stylesheet', href: '/stylesheets/bootstrap/css/bootstrap-responsive.css'}
     %link{rel: 'stylesheet', href: '/stylesheets/layout.css'}
+    - if ENV['RACK_ENV'] == 'production'
+      %script{ src: "/stylesheets/google_analytics.js"}
   %body
     %div.header.text-center
       %ul.logos
