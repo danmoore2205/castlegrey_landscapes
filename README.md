@@ -13,6 +13,11 @@ Use pry-remote to debug with foreman
 Then once you hit the breakpoint run pry-remote from the command line
 
     pry-remote
+###Resizing images
+The images on the portfolio page are resized to have a width of 300px. This reduces their file size without compromising the view quality. To resize an image from the command line, ensure imagemagick is installed and run the following command.
+
+    convert path_to_image -resize 300 output_path_to_image
+
 ###Environment Variables
 As it's deployed to heruko, environment variables are used for config data. Ensure the local .env file has the following variables:
 
