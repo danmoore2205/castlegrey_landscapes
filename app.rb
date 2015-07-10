@@ -44,7 +44,7 @@ class App < Sinatra::Base
   end
 
   post '/send_enquiry' do
-    if params[:bot_buster] == 6
+    if params[:bot_buster] == "6"
       Pony.mail(
         :to => ENV['TO_EMAIL'],
         :from => ENV['FROM_EMAIL'],
