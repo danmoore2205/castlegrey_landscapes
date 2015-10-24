@@ -29,4 +29,5 @@ Create .sass file in public/images/sass and import it at the end of layout.sass.
 
 ###Heroku Commands
 Deploy a branch to staging
+
     git push staging local_branch_name:master
