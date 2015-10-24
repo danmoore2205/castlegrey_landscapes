@@ -28,5 +28,5 @@ As it's deployed to heroku, environment variables are used for config data. Ensu
 Create .sass file in public/images/sass and import it at the end of layout.sass.
 
 ###Heroku Commands
-Deploy a branch
-    git push local_branch_name:master
+Deploy a branch to staging
+    git push staging local_branch_name:master
