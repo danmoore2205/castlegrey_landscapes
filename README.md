@@ -19,7 +19,7 @@ The images on the portfolio page are resized to have a width of 300px. This redu
     convert path_to_image -resize 300 output_path_to_image
 
 ###Environment Variables
-As it's deployed to heruko, environment variables are used for config data. Ensure the local .env file has the following variables:
+As it's deployed to heroku, environment variables are used for config data. Ensure the local .env file has the following variables:
 
 * FROM_EMAIL
 * TO_EMAIL
