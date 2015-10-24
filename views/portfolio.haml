@@ -2,6 +2,21 @@
   %h1 Portfolio
   .job
     %h4 Synthetic Grass Installation
+    %div.carousel.slide(id="carousel-example-generic" data-ride='carousel')
+      %div.carousel-inner{ role: "listbox"}
+        - @images.each_with_index do |image_filename, index|
+          %div{:class => (index == 0) ? "item active" : 'item' }
+            %img{:src => "images/homepage_carousel/#{image_filename}"}
+            %div.carousel-caption
+              %h3 Before
+              %p It looked like this
+      %a.left.carousel-control(href="#carousel-example-generic" role="button" data-slide="prev")
+        %span.glyphicon.glyphicon-chevron-left
+      %a.right.carousel-control(href="#carousel-example-generic" role="button" data-slide="next")
+        %span.glyphicon.glyphicon-chevron-right{ "aria-hidden" => "true"}
+        %span.sr-only Next
+  .job
+    %h4 Synthetic Grass Installation
     .row
       .col-md-4
         .image

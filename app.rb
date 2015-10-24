@@ -40,6 +40,8 @@ class App < Sinatra::Base
   get '/portfolio', :provides => :html do
     @title = "Portfolio - Castlegrey Landscapes Limerick"
     @meta_description = "View our portfolio of previous jobs completed."
+    @images = Dir.new('public/images/homepage_carousel').select { |f| f.downcase.include? ".jpg" }
+    @images.map! { |image| image.gsub(" ", "\ ") }
     haml :portfolio
   end
 
