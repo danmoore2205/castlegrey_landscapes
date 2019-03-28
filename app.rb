@@ -18,19 +18,11 @@ class App < Sinatra::Base
   set :haml, { :format => :html5 }
 
   get '/', :provides => :html do
-    @title = "Castlegrey Landscapes - Limerick based landscaping services"
-    @meta_description = "Castlegrey Landscapes are a company based in the Limerick area. We specialise in full " +
-    "landscaping and grounds maintenance services for your home or business."
-    @images = Dir.new('public/images/homepage_carousel').select { |f| f.downcase.include? ".jpg" }
-    @images.map! { |image| image.gsub(" ", "\ ") }
-    haml :homepage
+    redirect "http://www.castlegreylandscapes.ie"
   end
 
   get '/services', :provides => :html do
-    @title = "Services - Castlegrey Landscapes Limerick"
-    @meta_description = "Castlegrey Landscapes provide many services including tree and shrub planting, patios &" +
-    "paving, synthetic grass, new lawns, weed control, grounds maintenance and annaul maintenance contracts are available"
-    haml :services
+    redirect "http://www.castlegreylandscapes.ie"
   end
 
   # get '/contact', :provides => :html do
@@ -38,9 +30,7 @@ class App < Sinatra::Base
   # end
 
   get '/portfolio', :provides => :html do
-    @title = "Portfolio - Castlegrey Landscapes Limerick"
-    @meta_description = "View our portfolio of previous jobs completed."
-    haml :portfolio
+    redirect "http://www.castlegreylandscapes.ie"
   end
 
   post '/send_enquiry' do
