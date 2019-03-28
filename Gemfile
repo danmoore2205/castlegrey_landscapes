@@ -1,6 +1,6 @@
 # A sample Gemfile
 source "https://rubygems.org"
-ruby "2.1.2" # see https://devcenter.heroku.com/articles/ruby-versions
+ruby "2.3.1" # see https://devcenter.heroku.com/articles/ruby-versions
 
 gem 'sinatra'
 gem 'haml'
